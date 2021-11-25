@@ -105,7 +105,7 @@ export default function Home() {
             <img className="rounded mt-4" width="350" src={fileUrl} />
           )
         }
-        <button onClick={createMarket} className="mt-4 bg-blue-500 text-white rounded p-4 shadow-lg">
+        <button onClick={createMarket} className="mt-4 bg-blue-dark text-white rounded p-4 shadow-xs">
           Create NFT
         </button>
       </div>

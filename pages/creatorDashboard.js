@@ -62,8 +62,8 @@ export default function Home() {
                         nfts.map((nft, i) => (
                             <div key={i} className="border shadow rounded-xl overflow-hidden">
                                 <img src={nft.image} className="rounded" />
-                                <div className="flex flex-row p-4 bg-black">
-                                    <p className="text-2xl font-bold text-white">Price - {nft.price}&nbsp; </p>
+                                <div className="flex flex-row p-4 bg-blue-dark">
+                                    <p className="text-2xl font-bold bg-text-white">Price - {nft.price}&nbsp; </p>
                                     <img height="15px" width='15px' src='https://www.cryptologos.cc/logos/ethereum-eth-logo.svg?v=014' />
                                 </div>
                             </div>

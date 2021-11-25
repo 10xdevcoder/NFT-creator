@@ -55,22 +55,20 @@ export default function Home() {
   if (loaded === 'loaded' && !nfts.length) return (<h1 className="py-10 px-20 text-3xl">You currently own no asset!</h1>)
   //if (loaded === 'not-loaded' && !nfts.length) return (<button onClick={loadNFTs} className="rounded bg-blue-600 py-2 px-12 text-white m-16">Fetch NFTs</button>)
   return (
-    <div  style={{
-      background: 'blue',
-      color: 'blue'
-  }}>
-
-      <Head>
-        <title>MetaX | MyNft</title>
+    <div>
+          <Head>
+        <title>NFTC | MyNft</title>
       </Head>
       <div className="flex justify-center">
         <div className="p-4">
+          <h1 className="py-10 px-20 text-3xl">My NFT owned</h1>
+          <br></br>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
             {
               nfts.map((nft, i) => (
                 <div key={i} className="border shadow rounded-xl overflow-hidden">
                   <img src={nft.image} className="rounded" />
-                  <div className="flex flex-row p-4 bg-black">
+                  <div className="flex flex-row p-4 bg-blue-dark">
                     <p className="text-2xl font-bold text-white">Price - {nft.price}&nbsp; </p>
                     <img height="15px" width='15px' src='https://www.cryptologos.cc/logos/ethereum-eth-logo.svg?v=014' />
                   </div>

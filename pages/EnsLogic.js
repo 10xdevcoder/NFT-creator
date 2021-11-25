@@ -94,7 +94,7 @@ class EnsLogic extends React.Component {
 
                     }}
 
-                        className="mt-4 bg-blue-500 text-white rounded px-5 py-2 shadow-lg" >Search</button>
+                        className="mt-4 bg-blue-dark text-white rounded px-5 py-2 shadow-xs" >Search</button>
                 </form>
 
             </>
