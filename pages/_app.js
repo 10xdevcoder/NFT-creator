@@ -1,10 +1,10 @@
 import '../styles/globals.css'
 const ethers = require('ethers');
-const provider = new ethers.providers.JsonRpcProvider(`https://eth-rinkeby.alchemyapi.io/v2/avpSFE4CFF97rciebprxcggQd2cF18mJ`);
+const provider = new ethers.providers.JsonRpcProvider(`https://polygon-mumbai.g.alchemy.com/v2/2CjGw9Qa34v-UXMLq_aFG1AkD9monu47`);
 //const signer = provider.getSigner()
 
 //const [walletAddress, setWallet] = useState("");
-import styled from 'styled-components'
+
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link'
@@ -41,7 +41,7 @@ function MyApp({ Component, pageProps }) {
         >
          
           <Link href="/">
-            <a style={{ padding: '0rem 1rem' }} className="text-0.05px text-blue-dark md:text-0.05px">
+            <a style={{ padding: '0rem 2rem' }} className="text-0.05px text-blue-dark md:text-0.05px">
               MarketPlace
             </a>
           </Link>
@@ -70,7 +70,7 @@ function MyApp({ Component, pageProps }) {
           </Link>
           <button
             className="text-0.05px text-blue-dark md:text-0.05px"
-            style={{ padding: '0rem 2rem' }}
+            style={{ padding: '0rem 3rem' }}
             type='button' onClick={onClickConnect} >Connect</button>
         </div>
       </nav >

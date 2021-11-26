@@ -10,7 +10,7 @@ import {
 
 import NFT from '../artifacts/contracts/NFT.sol/NFT.json'
 import Market from '../artifacts/contracts/NFTMarket.sol/NFTMarket.json'
-const rpcEndpoint = 'https://eth-rinkeby.alchemyapi.io/v2/avpSFE4CFF97rciebprxcggQd2cF18mJ'
+const rpcEndpoint = 'https://polygon-mumbai.g.alchemy.com/v2/2CjGw9Qa34v-UXMLq_aFG1AkD9monu47'
 
 export default function Home() {
   const [nfts, setNfts] = useState([])
@@ -78,7 +78,7 @@ export default function Home() {
                   </div>
                   <div className="flex flex-row p-4 bg-blue-dark">
                     <p className="text-2xl font-bold text-white">Price - {nft.price}&nbsp; </p>
-                    <img height="15px" width='15px' src='https://www.cryptologos.cc/logos/ethereum-eth-logo.svg?v=014' />
+                    <img height="20px" width='20px' src='https://www.cryptologos.cc/logos/polygon-matic-logo.svg?v=014' />
                   </div>
                   <button className="w-full bg-blue-light text-white font-bold py-2 px-12 rounded" onClick={() => buyNft(nft)}>Buy</button>
                 </div>

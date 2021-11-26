@@ -26,11 +26,10 @@ module.exports = {
     artifacts: './artifacts',
   },
   networks: {
-    rinkeby: {
-      url: `https://eth-rinkeby.alchemyapi.io/v2/${api_key}`,
-      accounts: [`0x${rinkeby_private_key}`]
-
-
+    mumbai: {
+      url: `https://speedy-nodes-nyc.moralis.io/dc77b697f139e116154eed4e/polygon/mumbai`,
+      accounts: [`0x${rinkeby_private_key}`],
+      
     }
   }
 };

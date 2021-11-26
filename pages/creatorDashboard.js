@@ -55,6 +55,9 @@ export default function Home() {
     //if (loaded === 'not-loaded' && !nfts.length) return (<button onClick={loadNFTs} className="rounded bg-blue-600 py-2 px-12 text-white m-16">Fetch NFTs</button>)
     return (
         <div>
+             <Head>
+        <title>NFTC | Profile</title>
+      </Head>
             <div className="p-4">
                 <h2 className="text-2xl py-2">Items owned</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
@@ -62,13 +65,13 @@ export default function Home() {
                         nfts.map((nft, i) => (
                             <div key={i} className="border shadow rounded-xl overflow-hidden">
                                 <img src={nft.image} className="rounded" />
-                                <div className="flex flex-row p-4 bg-blue-dark">
+                                <div className="flex flex-row p-4 bg-blue-light">
                                     <p className="text-2xl font-bold bg-text-white">Price - {nft.price}&nbsp; </p>
-                                    <img height="15px" width='15px' src='https://www.cryptologos.cc/logos/ethereum-eth-logo.svg?v=014' />
+                                    <img height="20px" width='20px' src='https://www.cryptologos.cc/logos/polygon-matic-logo.svg?v=014' />
                                 </div>
                             </div>
                         ))
-                    }
+                    } 
                 </div>
             </div>
             <div className="px-4">
@@ -81,9 +84,9 @@ export default function Home() {
                                     sold.map((nft, i) => (
                                         <div key={i} className="border shadow rounded-xl overflow-hidden">
                                             <img src={nft.image} className="rounded" />
-                                            <div className="flex flex-row p-4 bg-black">
+                                            <div className="flex flex-row p-4 bg-blue-light">
                                                 <p className="text-2xl font-bold text-white">Price - {nft.price}&nbsp;</p>
-                                                <img width='15px' height='15px' src='https://www.cryptologos.cc/logos/ethereum-eth-logo.svg?v=014' />
+                                                <img width='20px' height='20px' src='https://www.cryptologos.cc/logos/polygon-matic-logo.svg?v=014' />
                                             </div>
                                         </div>
                                     ))

@@ -78,6 +78,9 @@ export default function Home() {
 
   return (
     <div className="flex justify-center">
+       <Head>
+        <title>NFTC | CreateItems</title>
+      </Head>
       <div className="w-1/2 flex flex-col pb-12">
         <input
           placeholder="NFT Name"
@@ -89,11 +92,16 @@ export default function Home() {
           className="mt-2 border rounded p-4"
           onChange={e => updateFormInput({ ...formInput, description: e.target.value })}
         />
+        <div className="flex flex-row">
         <input
-          placeholder="NFT Price in Eth"
+          placeholder="NFT Price in Matic"
           className="mt-2 border rounded p-4"
           onChange={e => updateFormInput({ ...formInput, price: e.target.value })}
+          
         />
+       
+       <img className="zIndex" height="30px" width='30px' src='https://www.cryptologos.cc/logos/polygon-matic-logo.svg?v=014' />
+        </div>
         <input
           type="file"
           name="NFT"

@@ -65,8 +65,11 @@ class EnsLogic extends React.Component {
 
         return (
             <>
+             <Head>
+        <title>NFTC | EnsLogic</title>
+      </Head>
                 <h1 style={{
-
+fontSize:'25px',
                     position: 'relative',
                     left: '30px'
                 }} >This is a simple ENS resolution.

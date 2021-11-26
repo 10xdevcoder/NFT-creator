@@ -9,7 +9,7 @@ import Head from 'next/head'
 import {
   nftmarketaddress, nftaddress
 } from '../config'
-
+//const rpcEndpoint = 'https://eth-rinkeby.alchemyapi.io/v2/avpSFE4CFF97rciebprxcggQd2cF18mJ'
 import Market from '../artifacts/contracts/NFTMarket.sol/NFTMarket.json'
 import NFT from '../artifacts/contracts/NFT.sol/NFT.json'
 
@@ -61,16 +61,16 @@ export default function Home() {
       </Head>
       <div className="flex justify-center">
         <div className="p-4">
-          <h1 className="py-10 px-20 text-3xl">My NFT owned</h1>
+          <h1 className="py-10 px-20 text-3xl">My NFT's owned</h1>
           <br></br>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
             {
               nfts.map((nft, i) => (
                 <div key={i} className="border shadow rounded-xl overflow-hidden">
                   <img src={nft.image} className="rounded" />
-                  <div className="flex flex-row p-4 bg-blue-dark">
+                  <div className="flex flex-row p-4 bg-blue-light">
                     <p className="text-2xl font-bold text-white">Price - {nft.price}&nbsp; </p>
-                    <img height="15px" width='15px' src='https://www.cryptologos.cc/logos/ethereum-eth-logo.svg?v=014' />
+                    <img height="20px" width='20px' src='https://www.cryptologos.cc/logos/polygon-matic-logo.svg?v=014' />
                   </div>
                 </div>
               ))
