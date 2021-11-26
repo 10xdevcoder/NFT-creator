@@ -1,7 +1,7 @@
 import React from 'react';
 const ethers = require('ethers');
 const provider = ethers.getDefaultProvider();
-
+import Head from 'next/head'
 class EnsLogic extends React.Component {
 
 

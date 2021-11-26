@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import web3 from 'web3'
 import axios from 'axios'
 import Web3Modal from "web3modal"
-
+import Head from 'next/head'
 
 import {
     nftmarketaddress, nftaddress
