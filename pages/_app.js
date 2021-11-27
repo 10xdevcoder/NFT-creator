@@ -36,11 +36,17 @@ function MyApp({ Component, pageProps }) {
         justifyContent: 'space-between'
       }}
       >
-        <img width={200} height={200} src="/Meta.png" />
+        <img width={300} height={300} src="/NFT creator.png" />
         <div className="flex mt-6"
         >
+           <Link href="/">
+            <a style={{ padding: '0rem 2rem' }} className="text-0.05px text-blue-dark md:text-0.05px">
+              Home
+            </a>
+          </Link>
+          
          
-          <Link href="/">
+          <Link href="/MarketPlace">
             <a style={{ padding: '0rem 2rem' }} className="text-0.05px text-blue-dark md:text-0.05px">
               MarketPlace
             </a>
@@ -52,12 +58,12 @@ function MyApp({ Component, pageProps }) {
               CreateNFT
             </a>
           </Link>
-          <Link href="/EnsLogic">
+          {/* <Link href="/EnsLogic">
             <a style={{ padding: '0rem 2rem' }}
               className="text-0.05px text-blue-dark md:text-0.05px">
               SearchENS
             </a>
-          </Link>
+          </Link> */}
           <Link href="/my-nfts">
             <a style={{ padding: '0rem 2rem' }} className="text-0.05px text-blue-dark md:text-0.05px">
               MyNFTS

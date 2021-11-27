@@ -94,13 +94,14 @@ export default function Home() {
         />
         <div className="flex flex-row">
         <input
+        type="number"
           placeholder="NFT Price in Matic"
           className="mt-2 border rounded p-4"
           onChange={e => updateFormInput({ ...formInput, price: e.target.value })}
           
         />
        
-       <img className="zIndex" height="30px" width='30px' src='https://www.cryptologos.cc/logos/polygon-matic-logo.svg?v=014' />
+       <img style={{margin:'5px'}} height="50px" width='50px' src='https://www.cryptologos.cc/logos/polygon-matic-logo.svg?v=014' />
         </div>
         <input
           type="file"

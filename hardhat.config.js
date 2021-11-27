@@ -28,7 +28,7 @@ module.exports = {
   networks: {
     mumbai: {
       url: `https://speedy-nodes-nyc.moralis.io/dc77b697f139e116154eed4e/polygon/mumbai`,
-      accounts: [`0x${rinkeby_private_key}`],
+      accounts: [`0x${rinkeby_private_key}`]
       
     }
   }

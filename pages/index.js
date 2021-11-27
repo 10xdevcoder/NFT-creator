@@ -1,92 +1,41 @@
-import { ethers } from 'ethers'
-import { useEffect, useState } from 'react'
-import axios from 'axios'
-import Web3Modal from "web3modal"
+import React from 'react'
 import Head from 'next/head'
+function index () {
+return (
+<>
+<Head>
+    <title>NFTC | Home</title>
+</Head>
 
-import {
-  nftaddress, nftmarketaddress
-} from '../config'
+<div className='grid place-items-center text-5xl '><h1 className='text-blue-light'><u>Welcome to NFT creator</u></h1></div>
+<br></br>
 
-import NFT from '../artifacts/contracts/NFT.sol/NFT.json'
-import Market from '../artifacts/contracts/NFTMarket.sol/NFTMarket.json'
-const rpcEndpoint = 'https://polygon-mumbai.g.alchemy.com/v2/2CjGw9Qa34v-UXMLq_aFG1AkD9monu47'
+<div className='grid place-items-center text-2xl '>
+<div className='grid place-items-center text-3xl text-green '>What do NFT creator do ?</div>
 
-export default function Home() {
-  const [nfts, setNfts] = useState([])
-  const [loadingState, setLoadingState] = useState('not-loaded')
-  useEffect(() => {
-    loadNFTs()
-  }, [])
-  async function loadNFTs() {
-    const provider = new ethers.providers.JsonRpcProvider(rpcEndpoint)
-    const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider)
-    const marketContract = new ethers.Contract(nftmarketaddress, Market.abi, provider)
-    const data = await marketContract.fetchMarketItems()
+    <p> <li className='text-blue-dark'>NFT creator is a place where you can create unique nfts and mint them.</li></p>
+    <br></br>
+    <p><li className='text-blue-dark'>Who need opensea or rarible, with NFT creator you can put your nft for sale right there. </li></p>
+    <br></br>
+<div className='grid place-items-center text-3xl text-blue-light '>How is NFT creator built ?</div>
 
-    const items = await Promise.all(data.map(async i => {
-      const tokenUri = await tokenContract.tokenURI(i.tokenId)
-      const meta = await axios.get(tokenUri)
-      let price = ethers.utils.formatUnits(i.price.toString(), 'ether')
-      let item = {
-        price,
-        itemId: i.itemId.toNumber(),
-        seller: i.seller,
-        owner: i.owner,
-        image: meta.data.image,
-        name: meta.data.name,
-        description: meta.data.description,
-      }
-      return item
-    }))
-    setNfts(items)
-    setLoadingState('loaded')
-  }
-  async function buyNft(nft) {
-    const web3Modal = new Web3Modal()
-    const connection = await web3Modal.connect()
-    const provider = new ethers.providers.Web3Provider(connection)
-    const signer = provider.getSigner()
-    const contract = new ethers.Contract(nftmarketaddress, Market.abi, signer)
-
-    const price = ethers.utils.parseUnits(nft.price.toString(), 'ether')
-    const transaction = await contract.createMarketSale(nftaddress, nft.itemId, {
-      value: price
-    })
-    await transaction.wait()
-    loadNFTs()
-  }
-  if (loadingState === 'loaded' && !nfts.length) return (<h1 className="px-20 py-10 text-3xl">No items in marketplace</h1>)
-  return (
-    <>
-
-      <Head>
-        <title>NFTC | MarketPlace</title>
-      </Head>
-      <div  className="flex justify-center">
-        <div className="px-4" style={{ maxWidth: '1600px' }}>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
-            {
-              nfts.map((nft, i) => (
-                <div key={i} className="border shadow rounded-xl overflow-hidden">
-                  <img src={nft.image} />
-                  <div className="p-4">
-                    <p style={{ height: '50px' }} className="text-2xl font-semibold">{nft.name}</p>
-                    <div style={{ height: '60x', overflow: 'hidden' }}>
-                      <p className="text-gray-400">{nft.description}</p>
-                    </div>
-                  </div>
-                  <div className="flex flex-row p-4 bg-blue-dark">
-                    <p className="text-2xl font-bold text-white">Price - {nft.price}&nbsp; </p>
-                    <img height="20px" width='20px' src='https://www.cryptologos.cc/logos/polygon-matic-logo.svg?v=014' />
-                  </div>
-                  <button className="w-full bg-blue-light text-white font-bold py-2 px-12 rounded" onClick={() => buyNft(nft)}>Buy</button>
-                </div>
-              ))
-            }
-          </div>
-        </div>
-      </div>
-    </>
-  )
+    <p><li className='text-blue-dark'>NFT creator is fully polygonized i.e it smart contracts are deployed on polygon, it connect only to the polygon network and the currency for minting, buying, selling and gas fees are all in MATIC (the native currency for the polygon chain).</li></p>
+    <br></br>
+    <p><li className='text-blue-dark'>This DApp currently use the polygon testnet(mumbai) to avoid using real money for testing.</li></p>
+    <br></br>
+    <p><li className='text-blue-dark'>NFT creator was also built using alchemy and moralis endpoints and it the future hope to rely on moralis database.</li></p>
+    <br></br>
+    <div className='grid place-items-center text-3xl text-blue-light '>How does NFT creator work ?</div>
+    <p><li className='text-blue-dark'>When a file is uploaded to NFT creator and the required information are filled in the createItems tab.</li></p>
+    <br></br>
+    <p><li className='text-blue-dark'>NFT creator then mints it into Nft with a little gass fee then you are automatically request to place the nft in the market place. </li></p>
+    <br></br>
+    <p><li className='text-blue-dark'>NFT creator then give you listing price for the nft and then place it on the market place as your NFT for sale with the price you set. </li></p>
+    <br></br>
+    <p><li className='text-blue-dark'>Buyers can come at anytime to purchase your NFT and the DApp will update automatically. </li></p>
+    <br></br>
+</div>
+</>
+);
 }
+export default index;
